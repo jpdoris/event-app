@@ -10,8 +10,8 @@ $factory->define(Model::class, function (Faker $faker) {
         'address1'    => $faker->streetAddress,
         'address2'    => $faker->secondaryAddress,
         'city'        => $faker->city,
-        'state'       => $faker->numberBetween(0,1),
-        'country'     => $faker->numberBetween(0,1),
-        'postal_code' => $faker->postcode(),
+        'state'       => $faker->numberBetween(1,50),
+        'country'     => $faker->numberBetween(1,100),
+        'postal_code' => $faker->postcode,
     ];
 });

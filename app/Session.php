@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Session extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -14,12 +14,9 @@ class Event extends Model
     protected $fillable = [
         'title',
         'description',
-        'user_id',
-        'venue_id',
         'startdate',
         'enddate',
-        'is_oneday',
-        'is_allday'
+        'is_keynote',
     ];
 
 
@@ -33,13 +30,8 @@ class Event extends Model
     ];
 
 
-    public function users()
+    public function speakers()
     {
-        return $this->hasOne('users');
-    }
-
-    public function venues()
-    {
-        return $this->hasOne('venues');
+        return $this->hasMany('speakers');
     }
 }

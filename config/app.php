@@ -150,6 +150,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Webpatser\Countries\CountriesServiceProvider::class, // added for country list
+        AdrianMejias\States\StatesServiceProvider::class, // added for state list
 
         /*
          * Application Service Providers...
@@ -208,6 +210,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Countries' => Webpatser\Countries\CountriesFacade::class, // added for country list
+        'States' => AdrianMejias\States\StatesFacade::class, // added for state list
 
     ],
 

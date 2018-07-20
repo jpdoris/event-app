@@ -7,10 +7,10 @@ $factory->define(Model::class, function (Faker $faker) {
     $startdate = $faker->dateTimeBetween('now', $futuredate);
     $enddate = $faker->dateTimeBetween($startdate, $futuredate);
     return [
-        'owner_id'      => $faker->name,
+        'owner_id'      => $faker->numberBetween(1,10),
         'title'         => $faker->title,
-        'description'   => $faker->sentence,
-        'location_id'   => $faker->numberBetween(1,10),
+        'description'   => $faker->sentence(5),
+        'venue_id'      => $faker->numberBetween(1,10),
         'startdate'     => $startdate,
         'enddate'       => $enddate,
         'is_oneday'     => $faker->numberBetween(0,1),

@@ -15,10 +15,10 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('user_id');
             $table->string('title');
             $table->text('description');
-            $table->unsignedInteger('location_id');
+            $table->unsignedInteger('venue_id');
             $table->dateTime('startdate');
             $table->dateTime('enddate');
             $table->boolean('is_oneday');

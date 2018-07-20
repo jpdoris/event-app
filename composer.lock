@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5bca48e56bbf3a25645858fcab9c285",
+    "content-hash": "39ab88a3991e6d5f9f83bbe3d69e35f6",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -455,16 +455,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.27",
+            "version": "v5.6.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2fe661f2444410a576aa40054ad9b7fe0bb5cee5"
+                "reference": "40ba2ee0e61cb4bc3c9f1dab04908e6acf06b86f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2fe661f2444410a576aa40054ad9b7fe0bb5cee5",
-                "reference": "2fe661f2444410a576aa40054ad9b7fe0bb5cee5",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/40ba2ee0e61cb4bc3c9f1dab04908e6acf06b86f",
+                "reference": "40ba2ee0e61cb4bc3c9f1dab04908e6acf06b86f",
                 "shasum": ""
             },
             "require": {
@@ -590,7 +590,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-07-10T13:47:01+00:00"
+            "time": "2018-07-17T14:15:36+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2294,6 +2294,55 @@
     ],
     "packages-dev": [
         {
+            "name": "adrianmejias/laravel-states",
+            "version": "1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adrianmejias/laravel-states.git",
+                "reference": "66c4f7147d92189e858f72dde81db0d2e0120909"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adrianmejias/laravel-states/zipball/66c4f7147d92189e858f72dde81db0d2e0120909",
+                "reference": "66c4f7147d92189e858f72dde81db0d2e0120909",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "laravel-library",
+            "autoload": {
+                "psr-0": {
+                    "AdrianMejias\\States": "src/"
+                },
+                "classmap": [
+                    "src/commands"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Mejias",
+                    "email": "adrianmejias@gmail.com",
+                    "homepage": "https://adrianmejias.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Laravel States is a bundle for Laravel, providing abbreviation, name and country code for US states.",
+            "homepage": "https://github.com/adrianmejias/laravel-states",
+            "keywords": [
+                "laravel",
+                "states",
+                "united states",
+                "us states",
+                "usa"
+            ],
+            "time": "2018-01-27T05:15:17+00:00"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.1.0",
             "source": {
@@ -3985,11 +4034,65 @@
                 "validate"
             ],
             "time": "2018-01-29T19:49:41+00:00"
+        },
+        {
+            "name": "webpatser/laravel-countries",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webpatser/laravel-countries.git",
+                "reference": "d55bc8e1d7c8da22532694378b44ffae11879653"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webpatser/laravel-countries/zipball/d55bc8e1d7c8da22532694378b44ffae11879653",
+                "reference": "d55bc8e1d7c8da22532694378b44ffae11879653",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Webpatser\\Countries": "src/"
+                },
+                "classmap": [
+                    "src/commands"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Kempen",
+                    "email": "christoph@downsized.nl",
+                    "homepage": "http://downsized.nl/",
+                    "role": "developer"
+                },
+                {
+                    "name": "Paul Kievits",
+                    "role": "developer"
+                }
+            ],
+            "description": "Laravel Countries is a bundle for Laravel, providing Almost ISO 3166_2, 3166_3, currency, Capital and more for all countries.",
+            "homepage": "https://github.com/webpatser/laravel-countries",
+            "keywords": [
+                "countries",
+                "iso_3166_2",
+                "iso_3166_3",
+                "laravel"
+            ],
+            "time": "2018-06-27T11:58:05+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "webpatser/laravel-countries": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

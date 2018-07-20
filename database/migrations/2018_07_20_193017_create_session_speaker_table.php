@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventSessionTable extends Migration
+class CreateSessionSpeakerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateEventSessionTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_session', function (Blueprint $table) {
+        Schema::create('session_speaker', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('event_id');
             $table->unsignedInteger('session_id');
+            $table->unsignedInteger('speaker_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateEventSessionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event_session');
+        Schema::dropIfExists('session_speaker');
     }
 }

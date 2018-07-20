@@ -15,6 +15,11 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->text('description');
+            $table->dateTime('startdate');
+            $table->dateTime('enddate');
+            $table->boolean('is_keynote');
             $table->timestamps();
         });
     }
