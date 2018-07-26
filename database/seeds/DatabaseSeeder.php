@@ -12,16 +12,22 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //Seed the countries
-        $this->call('CountriesSeeder');
-        $this->command->info('Seeded the countries!');
+        $this->call(CountriesSeeder::class);
+        $this->command->info('Seeded the countries table.');
 
         $this->call(StatesSeeder::class);
-        $this->command->info('Seeded the states!');
+        $this->command->info('Seeded the states table.');
 
-         $this->call(UsersTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->command->info('Seeded the users table.');
 
-//        factory(App\User::class, 50)->create()->each(function ($u) {
-//            $u->posts()->save(factory(App\Post::class)->make());
-//        });
+        $this->call(SessionsTableSeeder::class);
+        $this->command->info('Seeded the sessions table.');
+
+        $this->call(SpeakersTableSeeder::class);
+        $this->command->info('Seeded the speakers table.');
+
+        $this->call(EventsTableSeeder::class);
+        $this->command->info('Seeded the events table.');
     }
 }

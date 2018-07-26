@@ -4,20 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Speaker extends Model
+class Country extends Model
 {
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'firstname',
-        'lastname',
-        'title',
-        'bio',
-        'image_path',
-    ];
+    protected $fillable = [];
 
 
     /**
@@ -34,8 +28,4 @@ class Speaker extends Model
      * Eloquent Relationships
      */
 
-    public function session()
-    {
-        return $this->belongsTo('App\Session');
-    }
 }

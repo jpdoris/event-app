@@ -11,8 +11,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 2)->create()->each(function($u) {
-            $u->issues()->save(factory(App\Issues::class)->make());
+        DB::table('users')->truncate();
+        DB::table('attendees')->truncate();
+
+        factory(App\User::class, 10)->create()->each(function($u) {
+            $u->attendee()->saveMany(factory(App\Attendee::class, 3)->make());
         });
     }
 }

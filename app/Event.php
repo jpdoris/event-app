@@ -33,13 +33,39 @@ class Event extends Model
     ];
 
 
-    public function users()
+    /**
+     * Eloquent Relationships
+     */
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
     {
-        return $this->hasOne('users');
+        return $this->hasOne('App\User');
     }
 
-    public function venues()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function venue()
     {
-        return $this->hasOne('venues');
+        return $this->hasOne('App\Venue');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function attendee()
+    {
+        return $this->hasMany('App\Attendee');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function session()
+    {
+        return $this->hasMany('App\Session');
     }
 }

@@ -33,4 +33,17 @@ class Venue extends Model
     protected $hidden = [
         //
     ];
+
+
+    /**
+     * Eloquent Relationships
+     */
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function event()
+    {
+        return $this->belongsTo('App\Event');
+    }
 }

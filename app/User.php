@@ -28,4 +28,24 @@ class User extends Authenticatable
     ];
 
 
+    /**
+     * Eloquent Relationships
+     */
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function event()
+    {
+        return $this->belongsTo('App\Event');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function attendee()
+    {
+        return $this->hasMany('App\Attendee');
+    }
+
 }

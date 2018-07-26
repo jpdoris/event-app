@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Country;
 
-class Session extends Model
+class State extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -14,9 +15,12 @@ class Session extends Model
     protected $fillable = [
         'title',
         'description',
+        'user_id',
+        'venue_id',
         'startdate',
         'enddate',
-        'is_keynote',
+        'is_oneday',
+        'is_allday'
     ];
 
 
@@ -31,21 +35,33 @@ class Session extends Model
 
 
     /**
+     * @param $country
+     * @return Collection
+     */
+    public function filterStateByCountry($country)
+    {
+        return Country::where('country_code', $country)->get();
+    }
+
+
+    /**
      * Eloquent Relationships
      */
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function event()
+    public function attendee()
     {
-        return $this->belongsTo('App\Event');
+        return $this->belongsTo('App\Attendee');
     }
+
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function speakers()
+    public function venue()
     {
-        return $this->hasMany('App\Speaker');
+        return $this->belongsTo('App\Venue');
     }
+
 }

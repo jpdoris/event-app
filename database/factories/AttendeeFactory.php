@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(App\Attendee::class, function (Faker $faker) {
     return [
         'user_id'     => $faker->numberBetween(1,10),
         'firstname'   => $faker->firstName,

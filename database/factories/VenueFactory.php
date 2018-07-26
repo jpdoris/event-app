@@ -2,9 +2,10 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(App\Venue::class, function (Faker $faker) {
     return [
         'title'         => $faker->title,
+        'user_id'       => $faker->numberBetween(1,50),
         'description'   => $faker->text,
         'address1'      => $faker->address,
         'address2'      => $faker->secondaryAddress(1,10),

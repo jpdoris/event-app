@@ -34,18 +34,39 @@ class Attendee extends Model
     ];
 
 
-    public function users()
+    /**
+     * Eloquent Relationships
+     */
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function event()
     {
-        return $this->hasOne('users');
+        return $this->belongsToMany('App\Event');
     }
 
-    public function states()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
     {
-        return $this->hasOne('states');
+        return $this->belongsTo('App\User');
     }
 
-    public function countries()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function state()
     {
-        return $this->hasOne('countries');
+        return $this->hasOne('App\State');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function country()
+    {
+        return $this->hasOne('App\Country');
     }
 }
