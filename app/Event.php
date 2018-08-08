@@ -50,7 +50,7 @@ class Event extends Model
      */
     public function venue()
     {
-        return $this->hasOne('App\Venue');
+        return $this->belongsTo('App\Venue');
     }
 
     /**
@@ -62,10 +62,10 @@ class Event extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function session()
+    public function sessions()
     {
-        return $this->hasMany('App\Session');
+        return $this->belongsToMany('App\Session');
     }
 }

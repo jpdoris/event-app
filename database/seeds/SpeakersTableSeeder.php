@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SessionsTableSeeder extends Seeder
+class SpeakersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +11,8 @@ class SessionsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('sessions')->truncate();
+        DB::table('speakers')->truncate();
 
-        factory(App\Session::class, 10)->create();
+        factory(App\Speaker::class, 10)->create();
     }
 }

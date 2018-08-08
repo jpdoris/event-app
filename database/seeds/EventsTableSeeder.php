@@ -13,8 +13,6 @@ class EventsTableSeeder extends Seeder
     {
         DB::table('events')->truncate();
         DB::table('venues')->truncate();
-        DB::table('sessions')->truncate();
-        DB::table('speakers')->truncate();
 
         factory(App\Event::class, 10)->create();
 
@@ -22,12 +20,18 @@ class EventsTableSeeder extends Seeder
         $sessions = App\Session::all();
 
         // Get all the speakers
-        $sessions = App\Speaker::all();
+        $speakers = App\Speaker::all();
 
-// Populate the pivot table
-        App\Event::all()->each(function ($user) use ($roles) {
-            $user->roles()->attach(
-                $roles->random(rand(1, 3))->pluck('id')->toArray()
+        // Populate the pivot tables
+        App\Event::all()->each(function ($event) use ($sessions) {
+            $event->sessions()->attach(
+                $sessions->random(rand(1, 3))->pluck('id')->toArray()
+            );
+        });
+
+        App\Session::all()->each(function ($session) use ($speakers) {
+            $session->speakers()->attach(
+                $speakers->random(rand(1, 3))->pluck('id')->toArray()
             );
         });
     }

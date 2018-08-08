@@ -35,17 +35,18 @@ class Session extends Model
      */
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function event()
     {
-        return $this->belongsTo('App\Event');
+        return $this->belongsToMany('App\Event');
     }
+
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function speakers()
     {
-        return $this->hasMany('App\Speaker');
+        return $this->belongsToMany('App\Speaker');
     }
 }

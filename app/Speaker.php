@@ -34,8 +34,8 @@ class Speaker extends Model
      * Eloquent Relationships
      */
 
-    public function session()
+    public function sessions()
     {
-        return $this->belongsTo('App\Session');
+        return $this->belongsToMany('App\Session');
     }
 }
