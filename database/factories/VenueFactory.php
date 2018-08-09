@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Venue::class, function (Faker $faker) {
     return [
-        'title'         => $faker->title,
+        'title'         => $faker->company,
         'user_id'       => $faker->numberBetween(1,50),
         'description'   => $faker->text,
         'address1'      => $faker->address,

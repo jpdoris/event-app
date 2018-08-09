@@ -37,8 +37,8 @@
                                         <td>{{ $event->title }}</td>
                                         <td>{{ $event->description }}</td>
                                         <td>{{ $event->venue->title }}</td>
-                                        <td>{{ $event->startdate }}</td>
-                                        <td>{{ $event->enddate }}</td>
+                                        <td>{{ date('F d, Y', strtotime($event->startdate)) }}</td>
+                                        <td>{{ date('F d, Y', strtotime($event->enddate)) }}</td>
                                         <td></td>
                                     </tr>
                                 @endforeach

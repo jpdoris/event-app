@@ -8,7 +8,7 @@ $factory->define(App\Event::class, function (Faker $faker) {
     $enddate = $faker->dateTimeBetween($startdate, $futuredate);
     return [
         'user_id'       => $faker->numberBetween(1,10),
-        'title'         => $faker->title,
+        'title'         => $faker->sentence(4),
         'description'   => $faker->sentence(5),
         'venue_id'      => factory('App\Venue')->create()->id,
         'startdate'     => $startdate,
