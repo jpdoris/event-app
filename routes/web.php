@@ -11,16 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//Auth::routes();
+//
+//Route::get('/home', 'HomeController@index')->name('home');
+//
+//
+//// Admin/Management - Events
+//Route::prefix('admin/events')->group(function() {
+//    Route::get('/', 'AdminController@index')->name('admin.events.index');
+//});
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-// Admin/Management - Events
-Route::prefix('admin/events')->group(function() {
-    Route::get('/', 'AdminController@index')->name('admin.events.index');
-});
+Route::get('/{any}', 'SpaController@index')->where('any', '.*');
