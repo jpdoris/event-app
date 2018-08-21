@@ -27,3 +27,7 @@
 
 
 Route::get('/{any}', 'SpaController@index')->where('any', '.*');
+
+Route::get('/users', function () {
+    return factory('App\User', 10)->make();
+});
