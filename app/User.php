@@ -27,15 +27,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public $fullname;
-
-
-    public function getFullname()
-    {
-        $this->fullname = $this->firstname . " " . $this->lastname;
-        return $this->fullname;
-    }
-
 
     /**
      * Eloquent Relationships
