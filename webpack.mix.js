@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-const { VueLoaderPlugin } = require('vue-loader');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
