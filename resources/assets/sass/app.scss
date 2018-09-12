@@ -1,6 +1,7 @@
 
 // Fonts
-//@import url("https://fonts.googleapis.com/css?family=Open Sans:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Open Sans:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,600");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
@@ -11,10 +12,77 @@
 @import '~bootstrap-vue/dist/bootstrap-vue.css';
 
 * {
-    font-family: "Raleway", sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: $color5;
+
+    a {
+        color: $color4;
+        &:hover {
+            color: $color1;
+        }
+        &:active {
+            color: $color5;
+        }
+    }
+
+    h1 {
+        font-family: "Raleway", sans-serif !important;
+        font-size: 28px;
+    }
+
+    h2.title {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+}
+
+.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.page-header {
+    font-family: Roboto, sans-serif;
+    padding: 20px 16px;
+    background-color: $color5;
+    color: $header-color;
+    border-bottom: 10px solid $color3;
+
+    a {
+        color: $color1;
+        &:hover {
+            color: $color2;
+        }
+    }
+
+    p {
+        margin-bottom: 6px;
+    }
 }
 
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: $header-bg;
+    color: $header-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.content {
+    padding: 20px 30px 20px 30px;
+
+    form {
+        .col-form-label {
+            text-align: right;
+        }
+    }
+
+    .btn-primary {
+        background-color: $color5 !important;
+        border-color: $color4 !important;
+    }
+    .btn-info {
+        background-color: $color3 !important;
+        border-color: $color3 !important;
+    }
+}
+

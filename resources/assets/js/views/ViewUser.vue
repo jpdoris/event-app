@@ -40,14 +40,14 @@
                     <div class="form-group row">
                         <label for="password" class="blue-grey--text col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                            <input id="password" type="text" class="form-control" name="password" v-model="user.password">
+                            <input id="password" type="password" class="form-control" name="password" v-model="user.password">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="password_confirm" class="blue-grey--text col-sm-4 col-form-label">Confirm Password</label>
                         <div class="col-sm-8">
-                            <input id="password_confirm" type="text" class="form-control" name="password_confirm" v-model="user.password">
+                            <input id="password_confirm" type="password" class="form-control" name="password_confirm" v-model="user.password">
                         </div>
                     </div>
 

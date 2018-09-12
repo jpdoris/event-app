@@ -1,15 +1,5 @@
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-require('./bootstrap');
-
-
 window.Vue = require('vue');
-// require('vue-loader');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -19,12 +9,29 @@ window.Vue = require('vue');
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import BootstrapVue from 'bootstrap-vue'
 
-Vue.use(VueRouter)
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'vue-material-design-icons/styles.css';
+import '../sass/app.scss';
+
+Vue.use(VueRouter);
+Vue.use(BootstrapVue);
 
 import App from './views/App'
 import Hello from './views/Hello'
 import Home from './views/Home'
+import UsersIndex from './views/UsersIndex'
+import EditUser from './views/EditUser'
+
+import Eye from "vue-material-design-icons/Eye.vue";
+import Account from "vue-material-design-icons/Account.vue"
+
+components: {[
+    Account,
+    Eye,
+]}
 
 const router = new VueRouter({
     mode: 'history',
@@ -38,6 +45,16 @@ const router = new VueRouter({
             path: '/hello',
             name: 'hello',
             component: Hello,
+        },
+        {
+            path: '/users',
+            name: 'users.index',
+            component: UsersIndex,
+        },
+        {
+            path: '/user/:username',
+            name: 'user.view',
+            component: EditUser
         },
     ],
 });
