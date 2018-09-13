@@ -68,7 +68,7 @@
 }
 
 .content {
-    padding: 20px 30px 20px 30px;
+    padding: 30px;
 
     form {
         .col-form-label {
@@ -83,6 +83,28 @@
     .btn-info {
         background-color: $color3 !important;
         border-color: $color3 !important;
+    }
+
+    .card {
+        border-color: $color3;
+    }
+    .card-header {
+        background-color: $color3;
+    }
+    .card-footer {
+        .pagination {
+            color: $header-color;
+        }
+        background-color: $color3;
+    }
+}
+
+.page-footer {
+    color: $color1;
+    background-color: $color5;
+
+    .footer-copyright {
+        color: $color1;
     }
 }
 

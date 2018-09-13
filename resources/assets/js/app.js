@@ -1,11 +1,6 @@
 
 window.Vue = require('vue');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -16,17 +11,22 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-material-design-icons/styles.css';
 import '../sass/app.scss';
 
-Vue.use(VueRouter);
-Vue.use(BootstrapVue);
-
 import App from './views/App'
 import Hello from './views/Hello'
 import Home from './views/Home'
+import ajax from './directives/ajax'
+// import Post from './directives/Post'
 import UsersIndex from './views/UsersIndex'
 import EditUser from './views/EditUser'
 
 import Eye from "vue-material-design-icons/Eye.vue";
 import Account from "vue-material-design-icons/Account.vue"
+
+Vue.use(VueRouter);
+Vue.use(BootstrapVue);
+Vue.directive('ajax', ajax);
+// Vue.directive('Post', Post);
+
 
 components: {[
     Account,

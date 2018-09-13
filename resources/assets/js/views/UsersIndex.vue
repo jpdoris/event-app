@@ -1,42 +1,51 @@
 
 <template>
     <div class="users">
-        <h2 class="title">Users</h2>
-        <div v-if="error" class="error">
-            <p>{{ error }}</p>
-        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Users</h3>
+            </div>
 
-        <div v-if="users">
-            <table class="table table-responsive">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="{ id, username, fullname, email } in users">
-                        <td scope="row">{{ id }}</td>
-                        <td>{{ username }}</td>
-                        <td>{{ fullname }}</td>
-                        <td>{{ email }}</td>
-                        <td :username="users.username" @click="linkToUser(username)"><eye-icon title="View User Account" /></td>
-                        <td :username="users.username" @click="linkToUser(username)"><account-edit-icon title="Edit User" /></td>
-                        <td><account-remove-icon title="Delete User" /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="card-body">
+                <div v-if="error" class="error">
+                    <p>{{ error }}</p>
+                </div>
 
-        <div class="pagination">
-            <button type="button" class="btn btn-sm btn-info" :disabled="! prevPage" @click.prevent="goToPrev">Previous</button>
-            <div class="mx-auto">{{ paginationCount }}</div>
-            <button type="button" class="btn btn-sm btn-info" :disabled="! nextPage" @click.prevent="goToNext">Next</button>
+                <div v-if="users">
+                    <table class="table table-responsive table-striped table-condensed">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="{ id, username, fullname, email } in users">
+                            <td scope="row">{{ id }}</td>
+                            <td>{{ username }}</td>
+                            <td>{{ fullname }}</td>
+                            <td>{{ email }}</td>
+                            <td :username="users.username" @click="linkToUser(username)"><eye-icon title="View User Account" /></td>
+                            <td :username="users.username" @click="linkToUser(username)"><account-edit-icon title="Edit User" /></td>
+                            <td><account-remove-icon title="Delete User" /></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="pagination">
+                    <button type="button" class="btn btn-sm btn-info" :disabled="! prevPage" @click.prevent="goToPrev">Previous</button>
+                    <div class="mx-auto">{{ paginationCount }}</div>
+                    <button type="button" class="btn btn-sm btn-info" :disabled="! nextPage" @click.prevent="goToNext">Next</button>
+                </div>
+            </div>
         </div>
     </div>
 </template>

@@ -12,6 +12,10 @@
         <div class="row content">
             <router-view></router-view>
         </div>
+
+        <footer class="page-footer fixed-bottom font-small">
+            <div class="footer-copyright text-center py-3">Copyright © 2018 Some Company</div>
+        </footer>
     </div>
 </template>
 <script>

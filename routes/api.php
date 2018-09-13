@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::namespace('Api')->group(function () {
+    Route::post('/user/create', 'UserController@create');
+    Route::post('/user/update', 'UserController@update');
     Route::get('/user/{username}', 'UserController@view');
     Route::get('/users', 'UserController@index');
 });
