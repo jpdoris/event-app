@@ -30,9 +30,9 @@
                             <td>{{ username }}</td>
                             <td>{{ fullname }}</td>
                             <td>{{ email }}</td>
-                            <td :username="users.username" @click="linkToUser(username)"><eye-icon title="View User Account" /></td>
-                            <td :username="users.username" @click="linkToUser(username)"><account-edit-icon title="Edit User" /></td>
-                            <td><account-remove-icon title="Delete User" /></td>
+                            <td class="link" :username="users.username" @click="viewUser(username)"><eye-icon title="View User Account" /></td>
+                            <td class="link" :username="users.username" @click="editUser(username)"><account-edit-icon title="Edit User" /></td>
+                            <td class="link"><account-remove-icon title="Delete User" /></td>
                         </tr>
                         </tbody>
                     </table>
@@ -138,9 +138,18 @@
                         }
                     });
                 },
-                linkToUser(username) {
+                viewUser(username) {
                     this.$router.push({
                         name: 'user.view',
+                        params: {
+                            username: username,
+                        }
+                    });
+                    event.preventDefault()
+                },
+                editUser(username) {
+                    this.$router.push({
+                        name: 'user.edit',
                         params: {
                             username: username,
                         }

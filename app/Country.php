@@ -11,7 +11,15 @@ class Country extends Model
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'capital',
+        'citizenship',
+        'country_code',
+        'currency',
+        'currency_code',
+        'full_name',
+        'name'
+    ];
 
 
     /**
@@ -23,9 +31,25 @@ class Country extends Model
         //
     ];
 
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
 
     /**
      * Eloquent Relationships
      */
 
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\hasManyThrough
+     */
+    public function venue()
+    {
+        return $this->hasManyThrough('App\Venue');
+    }
 }

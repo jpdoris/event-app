@@ -13,14 +13,9 @@ class State extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
-        'description',
-        'user_id',
-        'venue_id',
-        'startdate',
-        'enddate',
-        'is_oneday',
-        'is_allday'
+        'iso_3166_2',
+        'name',
+        'country_code',
     ];
 
 
@@ -43,6 +38,14 @@ class State extends Model
         return Country::where('country_code', $country)->get();
     }
 
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
 
     /**
      * Eloquent Relationships
@@ -57,11 +60,11 @@ class State extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\hasManyThrough
      */
     public function venue()
     {
-        return $this->belongsTo('App\Venue');
+        return $this->hasManyThrough('App\Venue');
     }
 
 }

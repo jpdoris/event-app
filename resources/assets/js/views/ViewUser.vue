@@ -2,59 +2,26 @@
 <template>
     <div class="container-fluid">
         <div class="user">
-            <div v-if="error" class="error">
-                <p class="error">Error: {{ error }}</p>
-            </div>
 
-            <div v-if="user">
-                <h2 class="title">Edit User: {{ user.firstname }} {{ user.lastname }}</h2>
-                <form class="col-6">
-                    <div class="form-group row">
-                        <label for="username" class="blue-grey--text col-sm-4 col-form-label label-right">Username</label>
-                        <div class="col-sm-8">
-                            <input id="username" type="text" class="form-control" name="username" v-model="user.username">
+            <div v-if="user" class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">View User: {{ user.firstname }} {{ user.lastname }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">Name</div>
+                            <div class="col-sm-8">{{ user.fullname }}</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">Email</div>
+                            <div class="col-sm-8">{{ user.username }}</div>
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label for="firstname" class="blue-grey--text col-sm-4 col-form-label label-right">First Name</label>
-                        <div class="col-sm-8">
-                            <input id="firstname" type="text" class="form-control" name="firstname" v-model="user.firstname">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="lastname" class="blue-grey--text col-sm-4 col-form-label">Last Name</label>
-                        <div class="col-sm-8">
-                            <input id="lastname" type="text" class="form-control" name="lastname" v-model="user.lastname">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="email" class="blue-grey--text col-sm-4 col-form-label">Email</label>
-                        <div class="col-sm-8">
-                            <input id="email" type="text" class="form-control" name="email" v-model="user.email">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="password" class="blue-grey--text col-sm-4 col-form-label">Password</label>
-                        <div class="col-sm-8">
-                            <input id="password" type="password" class="form-control" name="password" v-model="user.password">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="password_confirm" class="blue-grey--text col-sm-4 col-form-label">Confirm Password</label>
-                        <div class="col-sm-8">
-                            <input id="password_confirm" type="password" class="form-control" name="password_confirm" v-model="user.password">
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-4">
-                        <button class="btn btn-primary" type="submit">Save</button>
-                    </div>
-                </form>
+                    <div class="card-footer"></div>
+                </div>
             </div>
 
         </div>

@@ -33,6 +33,22 @@ class Event extends Model
     ];
 
 
+    public function getLocation()
+    {
+        $value =  $this->venue->city;
+
+        if ($this->venue->state) {
+            $value .= $this->venue->getState();
+        }
+
+        if ($this->venue->country) {
+            $value .= $this->venue->getCountry();
+        }
+
+        return $value;
+    }
+
+
     /**
      * Eloquent Relationships
      */
@@ -46,7 +62,7 @@ class Event extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function venue()
     {
@@ -68,4 +84,5 @@ class Event extends Model
     {
         return $this->belongsToMany('App\Session');
     }
+
 }

@@ -17,7 +17,11 @@ import Home from './views/Home'
 import ajax from './directives/ajax'
 // import Post from './directives/Post'
 import UsersIndex from './views/UsersIndex'
+import ViewUser from './views/ViewUser'
 import EditUser from './views/EditUser'
+import EventsIndex from './views/EventsIndex'
+// import ViewEvent from './views/ViewEvent'
+// import EditEvent from './views/EditEvent'
 
 import Eye from "vue-material-design-icons/Eye.vue";
 import Account from "vue-material-design-icons/Account.vue"
@@ -54,8 +58,28 @@ const router = new VueRouter({
         {
             path: '/user/:username',
             name: 'user.view',
+            component: ViewUser
+        },
+        {
+            path: '/user/:username',
+            name: 'user.edit',
             component: EditUser
         },
+        {
+            path: '/events',
+            name: 'events.index',
+            component: EventsIndex,
+        },
+        // {
+        //     path: '/event/:id',
+        //     name: 'event.view',
+        //     component: ViewUser
+        // },
+        // {
+        //     path: '/event/:id',
+        //     name: 'event.edit',
+        //     component: EditUser
+        // },
     ],
 });
 

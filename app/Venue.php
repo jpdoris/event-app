@@ -24,7 +24,6 @@ class Venue extends Model
         'image_path'
     ];
 
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -36,14 +35,47 @@ class Venue extends Model
 
 
     /**
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state['name'];
+    }
+
+    /**
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country->name;
+    }
+
+
+    /**
      * Eloquent Relationships
      */
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function event()
     {
         return $this->hasMany('App\Event');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     */
+    public function state()
+    {
+        return $this->belongsTo('App\State', 'name');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     */
+    public function country()
+    {
+        return $this->belongsTo('App\Country', 'name');
     }
 }
