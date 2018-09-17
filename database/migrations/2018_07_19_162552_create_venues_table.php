@@ -20,8 +20,8 @@ class CreateVenuesTable extends Migration
             $table->string('address1');
             $table->string('address2');
             $table->string('city');
-            $table->unsignedInteger('state');
-            $table->unsignedInteger('country');
+            $table->unsignedInteger('state_id');
+            $table->unsignedInteger('country_id');
             $table->string('postal_code');
             $table->text('description');
             $table->string('image_path');

@@ -16,11 +16,11 @@ class UserController extends Controller
 
     public function view(Request $request, $username = null)
     {
-        $user = $request->user();
         if ($username) {
             $this_user = UserResource::collection(User::where('username', $username)->get());
             return $this_user[0];
         }
+        $user = $request->user();
         return UserResource::collection(User::get($user));
     }
 

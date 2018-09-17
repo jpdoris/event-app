@@ -4,8 +4,8 @@
             <h1>Event Manager</h1>
             <p>
                 <router-link :to="{ name: 'home' }">Home</router-link> |
-                <router-link :to="{ name: 'hello' }">Hello World</router-link> |
-                <router-link :to="{ name: 'users.index' }">Users Index</router-link>
+                <router-link :to="{ name: 'users.index' }">Users Index</router-link> |
+                <router-link :to="{ name: 'events.index' }">Events Index</router-link>
             </p>
         </div>
 

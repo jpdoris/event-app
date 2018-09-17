@@ -22,6 +22,10 @@ class Event extends Model
         'is_allday'
     ];
 
+    protected $dates = [
+        'startdate',
+        'enddate',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -35,14 +39,14 @@ class Event extends Model
 
     public function getLocation()
     {
-        $value =  $this->venue->city;
+        $value = $this->venue->city;
 
         if ($this->venue->state) {
-            $value .= $this->venue->getState();
+            $value .= ", " . $this->venue->getState();
         }
 
-        if ($this->venue->country) {
-            $value .= $this->venue->getCountry();
+        elseif ($this->venue->country) {
+            $value .= ", " . $this->venue->getCountry();
         }
 
         return $value;

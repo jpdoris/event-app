@@ -39,7 +39,7 @@ class Venue extends Model
      */
     public function getState()
     {
-        return $this->state['name'];
+        return $this->state->iso_3166_2;
     }
 
     /**
@@ -68,7 +68,7 @@ class Venue extends Model
      */
     public function state()
     {
-        return $this->belongsTo('App\State', 'name');
+        return $this->belongsTo('App\State');
     }
 
     /**
@@ -76,6 +76,6 @@ class Venue extends Model
      */
     public function country()
     {
-        return $this->belongsTo('App\Country', 'name');
+        return $this->belongsTo('App\Country');
     }
 }

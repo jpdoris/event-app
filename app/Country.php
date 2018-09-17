@@ -46,10 +46,10 @@ class Country extends Model
 
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\hasManyThrough
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
      */
     public function venue()
     {
-        return $this->hasManyThrough('App\Venue');
+        return $this->hasMany('App\Venue');
     }
 }
