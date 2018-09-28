@@ -37,10 +37,10 @@ class EventController extends Controller
 
 
         $event = new Event();
-        $event->title     = $request->input('title');
-        $event->description    = $request->input('description');
-        $event->startdate     = $request->input('startdate');
-        $event->enddate        = $request->input('enddate');
+        $event->title       = $request->input('title');
+        $event->description = $request->input('description');
+        $event->startdate   = $request->input('startdate');
+        $event->enddate     = $request->input('enddate');
         $event->save();
     }
 
@@ -57,10 +57,10 @@ class EventController extends Controller
         ]);
 
         $event = Event::find($id);
-        $event->title     = $request->input('title');
-        $event->description    = $request->input('description');
-        $event->startdate     = $request->input('startdate');
-        $event->enddate        = $request->input('enddate');
+        $event->title       = $request->input('title');
+        $event->description = $request->input('description');
+        $event->startdate   = $request->input('startdate');
+        $event->enddate     = $request->input('enddate');
         $event->save();
     }
 }

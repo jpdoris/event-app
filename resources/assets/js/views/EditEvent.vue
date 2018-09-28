@@ -103,15 +103,16 @@
         beforeRouteEnter (to, from, next) {
             getEvent(to.params.id, (err, data) => {
                 console.log('beforeRouteEnter data:', data); // todo
+                console.log('this:', this); // todo
                 next(vm => vm.setData(err, data));
             });
         },
         beforeRouteUpdate (to, from, next) {
             this.event = null;
             getEvent(to.params.id, (err, data) => {
-                console.log('beforeRouteUpdate data:', data); // todo
                 this.setData(err, data);
-                this.setDates(data.startdate, data.enddate);
+                console.log('beforeRouteUpdate data:', data); // todo
+                console.log('selectedDate:', selectedDate); // todo
                 next();
             });
         },
@@ -124,8 +125,9 @@
                 if (err) {
                     this.error = err.toString();
                 } else {
-                    event.startdate = selectedDate.start;
-                    event.enddate = selectedDate.end;
+                    console.log('setData data', event); // todo
+                    // event.startdate = selectedDate.start;
+                    // event.enddate = selectedDate.end;
                     this.event = event;
                     console.log('setData event', this.event); // todo
                 }
