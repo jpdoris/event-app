@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid full-width">
+    <div class="outer-box">
         <div class="page-header">
             <h1>Event Manager</h1>
             <p>

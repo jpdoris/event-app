@@ -39,7 +39,8 @@ class Venue extends Model
      */
     public function getState()
     {
-        return $this->state->iso_3166_2;
+        $state = State::find($this->state)->pluck('iso_3166_2')->first();
+        return $state;
     }
 
     /**
@@ -47,7 +48,8 @@ class Venue extends Model
      */
     public function getCountry()
     {
-        return $this->country->name;
+        $country = Country::find($this->country)->pluck('name')->first();
+        return $country;
     }
 
 
@@ -64,7 +66,7 @@ class Venue extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function state()
     {

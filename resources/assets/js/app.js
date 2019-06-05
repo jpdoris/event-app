@@ -4,12 +4,14 @@ window.Vue = require('vue');
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import vSelect from 'vue-select'
 import BootstrapVue from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-material-design-icons/styles.css';
 import '../sass/app.scss';
+import 'vue-select/dist/vue-select.css';
 
 import App from './views/App'
 import Home from './views/Home'
@@ -21,26 +23,16 @@ import EditUser from './views/EditUser'
 import EventsIndex from './views/EventsIndex'
 import ViewEvent from './views/ViewEvent'
 import EditEvent from './views/EditEvent'
-
-import Eye from "vue-material-design-icons/Eye.vue";
-import Account from "vue-material-design-icons/Account.vue"
-
 import VCalendar from 'v-calendar';
-import 'v-calendar/lib/v-calendar.min.css';
-Vue.use(VCalendar, {
-    firstDayOfWeek: 1,  // Monday
-});
 
+Vue.use(VCalendar, {
+    firstDayOfWeek: 1,  // Sunday
+});
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 Vue.directive('ajax', ajax);
 // Vue.directive('Post', Post);
-
-
-components: {[
-    Account,
-    Eye,
-]}
+Vue.component('v-select', vSelect);
 
 const router = new VueRouter({
     mode: 'history',

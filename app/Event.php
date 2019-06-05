@@ -37,16 +37,48 @@ class Event extends Model
     ];
 
 
+    public function getCity()
+    {
+        return $this->venue->city;
+    }
+
+    public function getStateID()
+    {
+        return $this->venue->state['id'];
+    }
+
+    public function getStateOptions()
+    {
+
+    }
+
+    public function getStateName()
+    {
+        return $this->venue->getState();
+    }
+
+    public function getCountryID()
+    {
+        return $this->venue->country['id'];
+    }
+
+    public function getCountryName()
+    {
+        if ($this->getCountryID()) {
+            return $this->venue->getCountry();
+        }
+        return null;
+    }
+
     public function getLocation()
     {
-        $value = $this->venue->city;
+        $value = $this->getCity();
 
-        if ($this->venue->state) {
-            $value .= ", " . $this->venue->getState();
+        if ($this->getStateID()) {
+            $value .= ", " . $this->getStateName();
         }
-
-        elseif ($this->venue->country) {
-            $value .= ", " . $this->venue->getCountry();
+        elseif ($this->getCountryID()) {
+            $value .= ", " . $this->getCountryName();
         }
 
         return $value;
@@ -72,6 +104,14 @@ class Event extends Model
     {
         return $this->belongsTo('App\Venue');
     }
+
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+//     */
+//    public function state()
+//    {
+//        return $this->hasManyThrough('App\Venue', 'App\State', 'id', 'id');
+//    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

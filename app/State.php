@@ -60,11 +60,11 @@ class State extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function venue()
     {
-        return $this->hasMany('App\Venue');
+        return $this->belongsTo('App\Venue');
     }
 
 }

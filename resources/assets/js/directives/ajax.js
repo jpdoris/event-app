@@ -18,6 +18,9 @@ export const ajax = {
         button.disabled = true;
 
         let formData = new FormData(this.el)
+
+        console.log('formData', response_message); // todo
+
         let formInstance = this.el
         this.vm.$http[this.getRequestType()](this.el.action, formData)
             .then(function (response) {
@@ -39,6 +42,7 @@ export const ajax = {
                     formInstance.reset();
 
                     // show success message here
+                    console.log('Success!');
                 }
 
                 button.disabled = false;

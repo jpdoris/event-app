@@ -29,6 +29,7 @@
     h1 {
         font-family: "Raleway", sans-serif !important;
         font-size: 28px;
+        color: $header-color;
     }
 
     h2.title {
@@ -38,8 +39,10 @@
 }
 
 .container-fluid {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    //margin-left: 0;
+    //margin-right: 0;
+    //padding-left: 0;
+    //padding-right: 0;
 }
 
 .page-header {
@@ -67,6 +70,11 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 .content {
     padding: 30px;
 
@@ -74,6 +82,10 @@
         .col-form-label {
             text-align: right;
         }
+    }
+
+    .venue-image-preview {
+        width: 200px;
     }
 
     .btn-primary {
@@ -96,6 +108,14 @@
             color: $header-color;
         }
         background-color: $color3;
+    }
+    v-datepicker {
+        button {
+            width: 40px;
+        }
+    }
+    .icon-medium {
+        width: 80px;
     }
 }
 

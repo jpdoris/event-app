@@ -14,6 +14,6 @@ const { VueLoaderPlugin } = require('vue-loader');
 mix .js('resources/assets/js/app.js', 'public/js')
     .webpackConfig({
         plugins: [
-            new VueLoaderPlugin()
+            // new VueLoaderPlugin()
         ]
     });

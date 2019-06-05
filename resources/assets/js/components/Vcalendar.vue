@@ -7,12 +7,13 @@
 </template>
 
 <script>
+    // let startdate =
     export default {
         data() {
             return {
                 selectedDate: {
-                    start: new Date(2018, 0, 9),
-                    end: new Date(2018, 0, 18)
+                    start: new Date.now(),
+                    end: new Date.now()
                 }
             };
         },

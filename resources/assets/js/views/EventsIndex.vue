@@ -73,6 +73,8 @@
         data() {
             return {
                 events: null,
+                stateOptions: null,
+                countryOptions: null,
                 meta: null,
                 links: {
                     first: null,
