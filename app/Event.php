@@ -59,7 +59,7 @@ class Event extends Model
 
     public function getCountryID()
     {
-        return $this->venue->country['id'];
+        return isset($this->venue->country['id']) ? $this->venue->country['id'] : null;
     }
 
     public function getCountryName()
