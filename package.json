@@ -20,7 +20,7 @@
         "vue": "^2.6.10"
     },
     "dependencies": {
-        "ajv": "^6.5.3",
+        "ajv": "^6.12.3",
         "bootstrap-vue": "^2.0.0-rc.22",
         "bulma": "^0.7.4",
         "font-awesome": "^4.7.0",
